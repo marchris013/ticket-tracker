@@ -31,7 +31,7 @@ GET /tickets
 GET /tickets/1
 ```
 
-## Notes
-
-Data is stored in memory only. Restarting the server clears all tickets. 
-PostgreSQL support coming in the next version.
+## Design Decisions
+- Mutex used to prevent race conditions across concurrent requests
+- Status and ID are set server-side to prevent client manipulation
+- In-memory storage intentionally kept simple — PostgreSQL version in progress
