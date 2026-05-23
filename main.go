@@ -23,7 +23,7 @@ type Store struct {
 }
 
 func NewStore() *Store {
-	return &Store{nextID: 1}
+	return &Store{nextID: 1, tickets: []Ticket{}}
 }
 
 func (s *Store) createTicket(w http.ResponseWriter, r *http.Request) {
